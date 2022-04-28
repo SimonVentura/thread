@@ -12,6 +12,10 @@ package com.mycompany.threadvent;
 public class StartServer  {
 
     public static void main(String[] args) {
+        Server srv = new Server(2000);
+        srv.ascolto();
+        srv.scrivi("benvenuto client");
+        
         
     }
 }

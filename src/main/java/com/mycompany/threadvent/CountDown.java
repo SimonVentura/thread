@@ -12,24 +12,24 @@ import java.util.logging.Logger;
  * @author Studente
  */
 public class CountDown extends Thread{
-    public int time;
+    public int tempo;
     
-    public CountDown(int time)
+    public CountDown(int t)
     {
-        this.time=time;
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(CountDown.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        this.tempo=t;
     }
     
     @Override
     public void run()
     {
-        for(int i=0;time>=i;time--)
+        for(int i=tempo;i>0;i--)
         {
-            System.out.println(time);
+            try {
+                System.out.println("Secondi :" +i);
+                sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(CountDown.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     
